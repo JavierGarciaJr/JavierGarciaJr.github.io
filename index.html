@@ -2,15 +2,38 @@
 <html>
 <head>
   <title>Assignment 2</title>
+  <script>
+    
+    function Changefont() {
+      var Size = document.getElementById('fontSizer').value;
+      localStorage.setItem('Size', document.body.style.fontSize = Size);
+      
+    }
+
+    
+    function Loadfont() {
+      var Size = localStorage.getItem('Size');
+      if (Size) {
+        document.body.style.fontSize = Size;
+      }
+    }
+  </script>
 </head>
-<body>
-<h1> The Sacramento Kings</h1>
-<p><strong>The Sacramento Kings</strong> have the <strong>Highest </strong> Offensive Rating in <strong>NBA History</strong> with a rating of <strong>119.4</strong> in the 2022-23 season.</p>
-<p><a href="https://www.statmuse.com/nba/ask/best-offensive-rating-by-a-team-in-nba-history-in-a-single-season" title="Light the Beam" target="_blank">StatMuse</a>.</p>
-<p><strong>CSC 196W Assignments Listed Below:</strong></p>
-<p><a href="fancifymytext.html">Assignment 5</a>.</p>
-<img
-  src="https://www.sportscasting.com/wp-content/uploads/2023/04/Sacramento-Kings.jpg?w=1024&h=682" alt="Golden One Center" />
+<body onload="Loadfont()">
+  <h1> The Sacramento Kings</h1>
+  <p><strong>The Sacramento Kings</strong> have the <strong>Highest </strong> Offensive Rating in <strong>NBA History</strong> with a rating of <strong>119.4</strong> in the 2022-23 season.</p>
+  <p><a href="https://www.statmuse.com/nba/ask/best-offensive-rating-by-a-team-in-nba-history-in-a-single-season" title="Light the Beam" target="_blank">StatMuse</a>.</p>
+  <p><strong>CSC 196W Assignments Listed Below:</strong></p>
+  <p><a href="fancifymytext.html">Assignment 5</a>.</p>
+  <p><strong>Assignment 10</strong> Change font size with localStorage</p>
+  <p><select id="fontSizer" onchange="Changefont()">
+    <option value="16px">Default</option>
+    <option value="12px">12</option>
+    <option value="24px">24</option>
+    <option value="36px">36</option>
+  </select></p>
+  <img src="https://www.sportscasting.com/wp-content/uploads/2023/04/Sacramento-Kings.jpg?w=1024&h=682" alt="Golden One Center" />
+
+  </select>
 </body>
 </html>
-
